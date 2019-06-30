@@ -11,12 +11,13 @@
 		0A03AA6CE720F878B4E8AABA /* Pods_Route_TrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E4B18E236C6C3A8FEBCA68 /* Pods_Route_TrackerTests.framework */; };
 		1B5CA6AE8E92DD31FEEB0275 /* Pods_Route_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0FE576EEDD7773641741A4 /* Pods_Route_Tracker.framework */; };
 		AA1831D022C8D97400BA0CB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1831CF22C8D97400BA0CB8 /* AppDelegate.swift */; };
-		AA1831D222C8D97400BA0CB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1831D122C8D97400BA0CB8 /* ViewController.swift */; };
-		AA1831D522C8D97400BA0CB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1831D322C8D97400BA0CB8 /* Main.storyboard */; };
 		AA1831D722C8D97700BA0CB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA1831D622C8D97700BA0CB8 /* Assets.xcassets */; };
 		AA1831DA22C8D97700BA0CB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1831D822C8D97700BA0CB8 /* LaunchScreen.storyboard */; };
 		AA1831E522C8D97700BA0CB8 /* Route_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1831E422C8D97700BA0CB8 /* Route_TrackerTests.swift */; };
 		AA1831F022C8D97700BA0CB8 /* Route_TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1831EF22C8D97700BA0CB8 /* Route_TrackerUITests.swift */; };
+		AA18320722C8DE2C00BA0CB8 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA18320622C8DE2C00BA0CB8 /* Map.storyboard */; };
+		AA18320922C8DE5100BA0CB8 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA18320822C8DE5100BA0CB8 /* MapViewController.swift */; };
+		AA18320C22C8E19400BA0CB8 /* GMSMapViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA18320B22C8E19400BA0CB8 /* GMSMapViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +45,6 @@
 		8527E731A7C02284CCC5E4EB /* Pods-Route Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Route Tracker.debug.xcconfig"; path = "Target Support Files/Pods-Route Tracker/Pods-Route Tracker.debug.xcconfig"; sourceTree = "<group>"; };
 		AA1831CC22C8D97400BA0CB8 /* Route Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Route Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA1831CF22C8D97400BA0CB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AA1831D122C8D97400BA0CB8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AA1831D422C8D97400BA0CB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA1831D622C8D97700BA0CB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA1831D922C8D97700BA0CB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA1831DB22C8D97700BA0CB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,6 +54,9 @@
 		AA1831EB22C8D97700BA0CB8 /* Route TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Route TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA1831EF22C8D97700BA0CB8 /* Route_TrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route_TrackerUITests.swift; sourceTree = "<group>"; };
 		AA1831F122C8D97700BA0CB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA18320622C8DE2C00BA0CB8 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		AA18320822C8DE5100BA0CB8 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		AA18320B22C8E19400BA0CB8 /* GMSMapViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSMapViewExtension.swift; sourceTree = "<group>"; };
 		B3BF61B2C823AA938CD52A10 /* Pods-Route TrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Route TrackerTests.release.xcconfig"; path = "Target Support Files/Pods-Route TrackerTests/Pods-Route TrackerTests.release.xcconfig"; sourceTree = "<group>"; };
 		BD93BCE45F75D93631E81918 /* Pods-Route TrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Route TrackerUITests.debug.xcconfig"; path = "Target Support Files/Pods-Route TrackerUITests/Pods-Route TrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CCB67B00E67543FC0435082F /* Pods-Route Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Route Tracker.release.xcconfig"; path = "Target Support Files/Pods-Route Tracker/Pods-Route Tracker.release.xcconfig"; sourceTree = "<group>"; };
@@ -109,7 +111,6 @@
 				BD93BCE45F75D93631E81918 /* Pods-Route TrackerUITests.debug.xcconfig */,
 				51876ADBD4B9FF0C1B7F8A4C /* Pods-Route TrackerUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -138,12 +139,10 @@
 		AA1831CE22C8D97400BA0CB8 /* Route Tracker */ = {
 			isa = PBXGroup;
 			children = (
-				AA1831CF22C8D97400BA0CB8 /* AppDelegate.swift */,
-				AA1831D122C8D97400BA0CB8 /* ViewController.swift */,
-				AA1831D322C8D97400BA0CB8 /* Main.storyboard */,
-				AA1831D622C8D97700BA0CB8 /* Assets.xcassets */,
-				AA1831D822C8D97700BA0CB8 /* LaunchScreen.storyboard */,
-				AA1831DB22C8D97700BA0CB8 /* Info.plist */,
+				AA1831FD22C8DC0D00BA0CB8 /* App */,
+				AA1831FE22C8DC1E00BA0CB8 /* Core */,
+				AA1831FF22C8DC2700BA0CB8 /* Resources */,
+				AA18320022C8DC3200BA0CB8 /* Environments */,
 			);
 			path = "Route Tracker";
 			sourceTree = "<group>";
@@ -164,6 +163,89 @@
 				AA1831F122C8D97700BA0CB8 /* Info.plist */,
 			);
 			path = "Route TrackerUITests";
+			sourceTree = "<group>";
+		};
+		AA1831FD22C8DC0D00BA0CB8 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AA1831CF22C8D97400BA0CB8 /* AppDelegate.swift */,
+				AA18320422C8DC5F00BA0CB8 /* BusinessLogic */,
+				AA18320322C8DC5900BA0CB8 /* Entity */,
+				AA18320222C8DC5000BA0CB8 /* Assembly */,
+				AA18320122C8DC4800BA0CB8 /* Flows */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		AA1831FE22C8DC1E00BA0CB8 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				AA18320A22C8E16100BA0CB8 /* Extensions */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		AA1831FF22C8DC2700BA0CB8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AA1831D622C8D97700BA0CB8 /* Assets.xcassets */,
+				AA1831D822C8D97700BA0CB8 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AA18320022C8DC3200BA0CB8 /* Environments */ = {
+			isa = PBXGroup;
+			children = (
+				AA1831DB22C8D97700BA0CB8 /* Info.plist */,
+			);
+			path = Environments;
+			sourceTree = "<group>";
+		};
+		AA18320122C8DC4800BA0CB8 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				AA18320522C8DE1900BA0CB8 /* Map */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		AA18320222C8DC5000BA0CB8 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		AA18320322C8DC5900BA0CB8 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		AA18320422C8DC5F00BA0CB8 /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BusinessLogic;
+			sourceTree = "<group>";
+		};
+		AA18320522C8DE1900BA0CB8 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				AA18320622C8DE2C00BA0CB8 /* Map.storyboard */,
+				AA18320822C8DE5100BA0CB8 /* MapViewController.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		AA18320A22C8E16100BA0CB8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AA18320B22C8E19400BA0CB8 /* GMSMapViewExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,7 +357,7 @@
 			files = (
 				AA1831DA22C8D97700BA0CB8 /* LaunchScreen.storyboard in Resources */,
 				AA1831D722C8D97700BA0CB8 /* Assets.xcassets in Resources */,
-				AA1831D522C8D97400BA0CB8 /* Main.storyboard in Resources */,
+				AA18320722C8DE2C00BA0CB8 /* Map.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,8 +473,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA1831D222C8D97400BA0CB8 /* ViewController.swift in Sources */,
 				AA1831D022C8D97400BA0CB8 /* AppDelegate.swift in Sources */,
+				AA18320922C8DE5100BA0CB8 /* MapViewController.swift in Sources */,
+				AA18320C22C8E19400BA0CB8 /* GMSMapViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,14 +511,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		AA1831D322C8D97400BA0CB8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AA1831D422C8D97400BA0CB8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AA1831D822C8D97700BA0CB8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -570,7 +645,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7J4TANDD7J;
-				INFOPLIST_FILE = "Route Tracker/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Route Tracker/Environments/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -589,7 +664,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7J4TANDD7J;
-				INFOPLIST_FILE = "Route Tracker/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Route Tracker/Environments/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
