@@ -8,6 +8,7 @@ target 'Route Tracker' do
   # Pods for Route Tracker
 
 	pod 'GoogleMaps'
+	pod 'PinLayout'
 
   target 'Route TrackerTests' do
     inherit! :search_paths
