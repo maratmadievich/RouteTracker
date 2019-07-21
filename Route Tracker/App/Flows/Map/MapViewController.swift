@@ -12,23 +12,24 @@ import GoogleMaps
 class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: GMSMapView!
-    @IBOutlet weak var buttonAddMarker: UIBarButtonItem!
     
     @IBOutlet weak var buttonStartTrack: UIButton!
     @IBOutlet weak var buttonEndTrack: UIButton!
+    @IBOutlet weak var buttonLastRoute: UIButton!
     
+    private var mapZoom: Float = 17
+    private let defaultLocation = CLLocationCoordinate2D(latitude: 55.753215,
+                                                         longitude: 37.622504)
     
     private let geocoder = CLGeocoder()
-    private let defaultMapZoom: Float = 17
-    private let defaultLocation = CLLocationCoordinate2D(latitude: 55.753215, longitude: 37.622504)
-    
     private var tappedMarker: GMSMarker?
-    
     private var locationManager: CLLocationManager?
     
     /// Для хранения объекта маршрута и объекта, представляющего его путь
-    var route: GMSPolyline?
-    var routePath: GMSMutablePath?
+    private var route: GMSPolyline?
+    private var routePath: GMSMutablePath?
+    
+    private var isTrackingWork = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,18 +44,21 @@ class MapViewController: UIViewController {
     }
     
     private func configureMap() {
-        let camera = GMSCameraPosition.camera(withTarget: defaultLocation, zoom: defaultMapZoom)
+        let camera = GMSCameraPosition.camera(withTarget: defaultLocation, zoom: mapZoom)
         mapView.camera = camera
         mapView.configureCustomMapStyle()
         mapView.delegate = self
     }
     
     private func configureButtons() {
+        buttonEndTrack.layer.cornerRadius = 4
+        buttonEndTrack.layer.masksToBounds = true
+        
         buttonStartTrack.layer.cornerRadius = 4
         buttonStartTrack.layer.masksToBounds = true
         
-        buttonEndTrack.layer.cornerRadius = 4
-        buttonEndTrack.layer.masksToBounds = true
+        buttonLastRoute.layer.cornerRadius = 4
+        buttonLastRoute.layer.masksToBounds = true
     }
     
     private func configureLocationManager() {
@@ -65,9 +69,7 @@ class MapViewController: UIViewController {
         locationManager.pausesLocationUpdatesAutomatically = false
         locationManager.startMonitoringSignificantLocationChanges()
         locationManager.delegate = self
-
     }
-    
     
 }
 
@@ -79,12 +81,24 @@ extension MapViewController {
     }
     
     @IBAction func buttonStartTrackTapped(_ sender: Any) {
-        configureRoute()
-        trackUserLocation(needTrackStart: true)
+        traking(isStart: true)
     }
     
     @IBAction func buttonEndTrackTapped(_ sender: Any) {
-        trackUserLocation(needTrackStart: false)
+        traking(isStart: false)
+    }
+    
+    @IBAction func buttonLastRouteTapped(_ sender: Any) {
+        checkNeedStopTrack()
+    }
+    
+    
+    private func traking(isStart: Bool) {
+        isTrackingWork = isStart
+        trackUserLocation(needTrackStart: isStart)
+        isStart
+            ? configureRoute()
+            : LocalRouteFactory().savePath(from: routePath)
     }
     
     
@@ -93,11 +107,14 @@ extension MapViewController {
         locationManager.requestLocation()
     }
     
-    private func configureRoute() {
+    private func configureRoute(with path: GMSMutablePath? = nil) {
         route?.map = nil
         route = GMSPolyline()
-        routePath = GMSMutablePath()
+        routePath = path == nil
+            ? GMSMutablePath()
+            : path
         route?.map = mapView
+        route?.path = routePath
         route?.strokeColor = .white
         route?.strokeWidth = 3
     }
@@ -109,10 +126,42 @@ extension MapViewController {
             : locationManager.stopUpdatingLocation()
     }
     
+    private func checkNeedStopTrack() {
+        isTrackingWork
+            ? showNeedStopTrackAlert()
+            : getLastRoute()
+    }
+    
+    private func getLastRoute() {
+        configureRoute(with: LocalRouteFactory().getPath())
+        guard let path = routePath else { return }
+        let update = GMSCameraUpdate.fit(GMSCoordinateBounds(path: path))
+        mapView.animate(with: update)
+    }
+    
+}
+
+/// Содержит алерты
+extension MapViewController {
+    
+    private func showNeedStopTrackAlert() {
+        let alert = UIAlertController(title: "Остановка трекера", message: "В настоящее время Ваш трекер включен. Хотите отключить его перед отображением предущего маршрута?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Отключить", style: .default, handler: { [weak self] action in
+            self?.isTrackingWork = false
+            self?.trackUserLocation(needTrackStart: false)
+            self?.getLastRoute()
+        }))
+        alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
+        present(alert, animated: true)
+    }
 }
 
 /// Расширяет MapViewController для работы с MapView
 extension MapViewController: GMSMapViewDelegate {
+    
+    func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
+        mapZoom = position.zoom
+    }
     
     private func trackButtons(needHide: Bool) {
         buttonStartTrack.isHidden = needHide
@@ -158,18 +207,18 @@ extension MapViewController: CLLocationManagerDelegate {
     /// переводит центр карты в эту точку
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let myLocation = locations.first {
-            generateRouteMarker(by: myLocation)
+            addPointToRoute(by: myLocation)
             mapView.animate(toLocation: myLocation.coordinate)
         }
     }
     
     /// Добавляет точку в маршрут движения пользователя
-    private func generateRouteMarker(by location: CLLocation) {
+    private func addPointToRoute(by location: CLLocation) {
         guard let route = route,
             let routePath = routePath else {return }
         routePath.add(location.coordinate)
         route.path = routePath
-        let position = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 17)
+        let position = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: mapZoom)
         mapView.animate(to: position)
     }
     
@@ -183,6 +232,10 @@ extension MapViewController {
     
     private func configureLayout() {
         mapView.pin.all()
+        
+        buttonLastRoute.pin
+            .left(5%).right(5%)
+            .top(20).height(46)
         buttonStartTrack.pin
             .left(5%).bottom(20)
             .height(46).width(44%)

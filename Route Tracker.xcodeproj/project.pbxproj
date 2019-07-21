@@ -18,6 +18,9 @@
 		AA18320722C8DE2C00BA0CB8 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA18320622C8DE2C00BA0CB8 /* Map.storyboard */; };
 		AA18320922C8DE5100BA0CB8 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA18320822C8DE5100BA0CB8 /* MapViewController.swift */; };
 		AA18320C22C8E19400BA0CB8 /* GMSMapViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA18320B22C8E19400BA0CB8 /* GMSMapViewExtension.swift */; };
+		AA1885A922E49253003658F6 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1885A822E49253003658F6 /* RealmService.swift */; };
+		AA1885AB22E493DA003658F6 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1885AA22E493DA003658F6 /* Coordinate.swift */; };
+		AA1885AD22E4A4FD003658F6 /* LocalRouteFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1885AC22E4A4FD003658F6 /* LocalRouteFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		AA18320622C8DE2C00BA0CB8 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		AA18320822C8DE5100BA0CB8 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		AA18320B22C8E19400BA0CB8 /* GMSMapViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSMapViewExtension.swift; sourceTree = "<group>"; };
+		AA1885A822E49253003658F6 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		AA1885AA22E493DA003658F6 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		AA1885AC22E4A4FD003658F6 /* LocalRouteFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRouteFactory.swift; sourceTree = "<group>"; };
 		B3BF61B2C823AA938CD52A10 /* Pods-Route TrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Route TrackerTests.release.xcconfig"; path = "Target Support Files/Pods-Route TrackerTests/Pods-Route TrackerTests.release.xcconfig"; sourceTree = "<group>"; };
 		BD93BCE45F75D93631E81918 /* Pods-Route TrackerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Route TrackerUITests.debug.xcconfig"; path = "Target Support Files/Pods-Route TrackerUITests/Pods-Route TrackerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CCB67B00E67543FC0435082F /* Pods-Route Tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Route Tracker.release.xcconfig"; path = "Target Support Files/Pods-Route Tracker/Pods-Route Tracker.release.xcconfig"; sourceTree = "<group>"; };
@@ -220,6 +226,7 @@
 		AA18320322C8DC5900BA0CB8 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				AA1885AA22E493DA003658F6 /* Coordinate.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -227,6 +234,8 @@
 		AA18320422C8DC5F00BA0CB8 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
+				AA1885A822E49253003658F6 /* RealmService.swift */,
+				AA1885AC22E4A4FD003658F6 /* LocalRouteFactory.swift */,
 			);
 			path = BusinessLogic;
 			sourceTree = "<group>";
@@ -438,12 +447,16 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Route Tracker/Pods-Route Tracker-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/PinLayout/PinLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PinLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -503,7 +516,10 @@
 			files = (
 				AA1831D022C8D97400BA0CB8 /* AppDelegate.swift in Sources */,
 				AA18320922C8DE5100BA0CB8 /* MapViewController.swift in Sources */,
+				AA1885AD22E4A4FD003658F6 /* LocalRouteFactory.swift in Sources */,
 				AA18320C22C8E19400BA0CB8 /* GMSMapViewExtension.swift in Sources */,
+				AA1885AB22E493DA003658F6 /* Coordinate.swift in Sources */,
+				AA1885A922E49253003658F6 /* RealmService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
