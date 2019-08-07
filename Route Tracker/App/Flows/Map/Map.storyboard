@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C8L-vk-FFI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C8L-vk-FFI">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,29 +15,52 @@
             <objects>
                 <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="ru2-ha-YFs" customClass="MapViewController" customModule="Route_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bXZ-4A-Y0J">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xyE-IJ-qer" customClass="GMSMapView">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xyE-IJ-qer" customClass="GMSMapView">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eaX-TU-yuB">
+                                <rect key="frame" x="20" y="500" width="90" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="Начать трек"/>
+                                <connections>
+                                    <action selector="buttonStartTrackTapped:" destination="ru2-ha-YFs" eventType="touchUpInside" id="Wcb-iK-1Ls"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEd-6J-lpa">
+                                <rect key="frame" x="200" y="500" width="114" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="Закончить трек"/>
+                                <connections>
+                                    <action selector="buttonEndTrackTapped:" destination="ru2-ha-YFs" eventType="touchUpInside" id="wnY-c1-JH2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDq-n2-3Ew">
+                                <rect key="frame" x="103" y="318" width="168" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="Предыдущий маршрут"/>
+                                <connections>
+                                    <action selector="buttonLastRouteTapped:" destination="ru2-ha-YFs" eventType="touchUpInside" id="eE2-bi-TaI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Rt8-AG-IZs" firstAttribute="trailing" secondItem="xyE-IJ-qer" secondAttribute="trailing" id="5sO-jS-S6Z"/>
-                            <constraint firstItem="xyE-IJ-qer" firstAttribute="top" secondItem="Rt8-AG-IZs" secondAttribute="top" id="9h0-FF-rwJ"/>
-                            <constraint firstItem="Rt8-AG-IZs" firstAttribute="bottom" secondItem="xyE-IJ-qer" secondAttribute="bottom" id="MDN-6U-LnG"/>
-                            <constraint firstItem="xyE-IJ-qer" firstAttribute="leading" secondItem="Rt8-AG-IZs" secondAttribute="leading" id="c9T-SP-iR9"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Rt8-AG-IZs"/>
                     </view>
                     <navigationItem key="navigationItem" title="Карта" id="aZt-01-2NC">
-                        <barButtonItem key="leftBarButtonItem" title="Отслеживать" id="CuA-3A-vIU">
-                            <connections>
-                                <action selector="buttonTrackTapped:" destination="ru2-ha-YFs" id="Yap-2s-o8C"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Текущее" id="kXJ-Xe-Lyu">
                             <connections>
                                 <action selector="buttonCurrentTapped:" destination="ru2-ha-YFs" id="NZU-w7-gtv"/>
@@ -45,7 +68,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="buttonAddMarker" destination="CuA-3A-vIU" id="R7t-0c-hCa"/>
+                        <outlet property="buttonEndTrack" destination="rEd-6J-lpa" id="uio-1o-N3b"/>
+                        <outlet property="buttonLastRoute" destination="LDq-n2-3Ew" id="b9M-9T-zof"/>
+                        <outlet property="buttonStartTrack" destination="eaX-TU-yuB" id="1Kb-G2-G63"/>
                         <outlet property="mapView" destination="xyE-IJ-qer" id="Kd9-ee-HXi"/>
                     </connections>
                 </viewController>
@@ -58,7 +83,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="C8L-vk-FFI" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Rvo-2g-836">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Rvo-2g-836">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

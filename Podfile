@@ -8,6 +8,8 @@ target 'Route Tracker' do
   # Pods for Route Tracker
 
 	pod 'GoogleMaps'
+	pod 'PinLayout'
+	pod 'RealmSwift' 
 
   target 'Route TrackerTests' do
     inherit! :search_paths
