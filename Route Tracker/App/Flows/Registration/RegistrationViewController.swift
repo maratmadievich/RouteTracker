@@ -20,12 +20,18 @@ class RegistrationViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		navigationItem.title = "Регистрация"
+		configureViews()
     }
     
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
 		configureLayout()
+	}
+	
+	private func configureViews() {
+		navigationItem.title = "Регистрация"
+		textFieldLogin.autocorrectionType = .no
+		textFieldPass.autocorrectionType = .no
 	}
 	
 	@IBAction func buttonRegistrationTapped(_ sender: Any) {

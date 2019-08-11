@@ -18,12 +18,17 @@ class RecoveryViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		navigationItem.title = "Восстановление пароля"
+		configureViews()
     }
 	
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
 		configureLayout()
+	}
+	
+	private func configureViews() {
+		navigationItem.title = "Восстановление пароля"
+		textFieldLogin.autocorrectionType = .no
 	}
     
 	@IBAction func buttonRecoveryTapped(_ sender: Any) {

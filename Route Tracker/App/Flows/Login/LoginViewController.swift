@@ -22,12 +22,18 @@ class LoginViewController: UIViewController {
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
-		navigationItem.title = "Авторизация"
+		configureViews()
     }
 
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
 		configureLayout()
+	}
+	
+	private func configureViews() {
+		navigationItem.title = "Авторизация"
+		textFieldLogin.autocorrectionType = .no
+		textFieldPass.autocorrectionType = .no
 	}
 	
 	@IBAction func buttonLoginTapped(_ sender: Any) {
