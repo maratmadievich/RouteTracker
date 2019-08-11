@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 import PinLayout
 
 class LoginViewController: UIViewController {
@@ -19,10 +21,12 @@ class LoginViewController: UIViewController {
 	@IBOutlet weak var router: LoginRouter!
 
 	let userManager = UserManagerFactory().makeUserManager()
+	let disposeBag = DisposeBag()
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
 		configureViews()
+		configureObservers()
     }
 
 	override func viewDidLayoutSubviews() {
@@ -35,6 +39,19 @@ class LoginViewController: UIViewController {
 		textFieldLogin.autocorrectionType = .no
 		textFieldPass.autocorrectionType = .no
 	}
+	
+	private func configureObservers() {
+		Observable
+			.combineLatest(textFieldLogin.rx.text,
+						   textFieldPass.rx.text)
+			.map { login, password in
+				return !(login ?? "").isEmpty && (password ?? "").count >= 4
+			}
+			.subscribe(onNext: {[weak buttonLogin] inputFilled in
+				buttonLogin?.isEnabled = inputFilled
+			}).disposed(by: disposeBag)
+		}
+
 	
 	@IBAction func buttonLoginTapped(_ sender: Any) {
 		validateUser()

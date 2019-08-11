@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 import PinLayout
 import GoogleMaps
 
@@ -18,12 +20,13 @@ class MapViewController: UIViewController {
     @IBOutlet weak var buttonLastRoute: UIButton!
     
     private var mapZoom: Float = 17
-    private let defaultLocation = CLLocationCoordinate2D(latitude: 55.753215,
-                                                         longitude: 37.622504)
+    private let defaultLocation = CLLocationCoordinate2D(latitude: 55.753215, longitude: 37.622504)
     
     private let geocoder = CLGeocoder()
     private var tappedMarker: GMSMarker?
-    private var locationManager: CLLocationManager?
+	private let locationManager = LocationManager.instance
+	private let disposeBag = DisposeBag()
+
     
     /// Для хранения объекта маршрута и объекта, представляющего его путь
     private var route: GMSPolyline?
@@ -35,7 +38,7 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         configureMap()
         configureButtons()
-        configureLocationManager()
+		configureLocationManager()
     }
     
     override func viewDidLayoutSubviews() {
@@ -60,16 +63,27 @@ class MapViewController: UIViewController {
         buttonLastRoute.layer.cornerRadius = 4
         buttonLastRoute.layer.masksToBounds = true
     }
-    
-    private func configureLocationManager() {
-        locationManager = CLLocationManager()
-        guard let locationManager = locationManager else { return }
-        locationManager.allowsBackgroundLocationUpdates = true
-        locationManager.requestAlwaysAuthorization()
-        locationManager.pausesLocationUpdatesAutomatically = false
-        locationManager.startMonitoringSignificantLocationChanges()
-        locationManager.delegate = self
-    }
+	
+	private func configureLocationManager() {
+		locationManager
+			.location
+			.asObservable()
+			.bind { [weak self] location in
+				guard let location = location else { return }
+				self?.addPointToRoute(by: location)
+				self?.mapView.animate(toLocation: location.coordinate)
+		}.disposed(by: disposeBag)
+	}
+	
+	/// Добавляет точку в маршрут движения пользователя
+	private func addPointToRoute(by location: CLLocation) {
+		guard let route = route,
+			let routePath = routePath else {return }
+		routePath.add(location.coordinate)
+		route.path = routePath
+		let position = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: mapZoom)
+		mapView.animate(to: position)
+	}
     
 }
 
@@ -103,7 +117,6 @@ extension MapViewController {
     
     
     private func getCurrentLocation() {
-        guard let locationManager = locationManager else { return }
         locationManager.requestLocation()
     }
     
@@ -120,7 +133,6 @@ extension MapViewController {
     }
     
     private func trackUserLocation(needTrackStart: Bool) {
-        guard let locationManager = locationManager else { return }
         needTrackStart
             ? locationManager.startUpdatingLocation()
             : locationManager.stopUpdatingLocation()
@@ -197,35 +209,6 @@ extension MapViewController: GMSMapViewDelegate {
         }
     }
     
-}
-
-/// Расширяет MapViewController для отслеживания
-/// текущего местоположения
-extension MapViewController: CLLocationManagerDelegate {
-    
-    /// Получает местоположение пользователя и
-    /// переводит центр карты в эту точку
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let myLocation = locations.first {
-            addPointToRoute(by: myLocation)
-            mapView.animate(toLocation: myLocation.coordinate)
-        }
-    }
-    
-    /// Добавляет точку в маршрут движения пользователя
-    private func addPointToRoute(by location: CLLocation) {
-        guard let route = route,
-            let routePath = routePath else {return }
-        routePath.add(location.coordinate)
-        route.path = routePath
-        let position = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: mapZoom)
-        mapView.animate(to: position)
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("При получении местоположния возникли ошибки: \(error.localizedDescription)")
-    }
-
 }
 
 extension MapViewController {
