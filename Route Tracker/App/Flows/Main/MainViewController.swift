@@ -12,7 +12,10 @@ class MainViewController: UIViewController {
 	
 	@IBOutlet weak var buttonMap: UIButton!
 	@IBOutlet weak var buttonLogout: UIButton!
-	@IBOutlet weak var router: MainRouter!
+	
+	internal var onMap: ((String) -> Void)?
+	internal var onLogout: (() -> Void)?
+	
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +28,12 @@ class MainViewController: UIViewController {
 	}
     
 	@IBAction func buttonMapTapped(_ sender: Any) {
-		router.showMap()
+		onMap?("random")
 	}
 	
 	@IBAction func buttonLogoutTapped(_ sender: Any) {
 		UserDefaults.standard.set(false, forKey: "isLogin")
-		router.logout()
+		onLogout?()
 	}
 
 }

@@ -16,9 +16,12 @@ class LoginViewController: UIViewController {
 	@IBOutlet weak var buttonLogin: UIButton!
 	@IBOutlet weak var buttonRegistration: UIButton!
 	@IBOutlet weak var buttonRecovery: UIButton!
-	@IBOutlet weak var router: LoginRouter!
 
-	let userManager = UserManagerFactory().makeUserManager()
+	private let userManager = UserManagerFactory().makeUserManager()
+	
+	internal var onMain: (() -> Void)?
+	internal var onRecovery: (() -> Void)?
+	internal var onRegistration: (() -> Void)?
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +38,11 @@ class LoginViewController: UIViewController {
 	}
 	
 	@IBAction func buttonRecoveryTapped(_ sender: Any) {
-		router.showRecovery()
+		onRecovery?()
 	}
 	
 	@IBAction func buttonRegistrationTapped(_ sender: Any) {
-		router.showRegistration()
+		onRegistration?()
 	}
 	
 	// Unwind segue для выхода автоматически удаляет флаг авторизации
@@ -52,7 +55,7 @@ class LoginViewController: UIViewController {
 			let password = textFieldPass.text else { return }
 		if userManager.validateUser(by: login, and: password) {
 			UserDefaults.standard.set(true, forKey: "isLogin")
-			router.showMain()
+			onMain?()
 		} else {
 			show(error: "Пользователь не найден")
 		}

@@ -14,10 +14,12 @@ class RegistrationViewController: UIViewController {
 	@IBOutlet weak var textFieldPass: UITextField!
 	
 	@IBOutlet weak var buttonRegistration: UIButton!
-	@IBOutlet weak var router: RegistrationRouter!
 	
-	let userManager = UserManagerFactory().makeUserManager()
+	private let userManager = UserManagerFactory().makeUserManager()
 	
+	internal var onLogin: (() -> Void)?
+	
+
     override func viewDidLoad() {
         super.viewDidLoad()
 		navigationItem.title = "Регистрация"
@@ -36,8 +38,7 @@ class RegistrationViewController: UIViewController {
 		guard let login = textFieldLogin.text,
 			let password = textFieldPass.text else { return }
 		userManager.saveUser(with: login, password: password)
-		UserDefaults.standard.set(true, forKey: "isLogin")
-		router.showMain()
+		onLogin?()
 	}
 
 }

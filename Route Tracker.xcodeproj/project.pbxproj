@@ -10,6 +10,13 @@
 		050C4185995C182705F6F91F /* Pods_Route_TrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F05E9DF57DA6AD0A9EA7963F /* Pods_Route_TrackerUITests.framework */; };
 		0A03AA6CE720F878B4E8AABA /* Pods_Route_TrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E4B18E236C6C3A8FEBCA68 /* Pods_Route_TrackerTests.framework */; };
 		1B5CA6AE8E92DD31FEEB0275 /* Pods_Route_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0FE576EEDD7773641741A4 /* Pods_Route_Tracker.framework */; };
+		84B7A7CD23013F8F001B4E92 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7A7CC23013F8F001B4E92 /* BaseCoordinator.swift */; };
+		84B7A7CF23014034001B4E92 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7A7CE23014034001B4E92 /* ApplicationCoordinator.swift */; };
+		84B7A7D1230141CC001B4E92 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7A7D0230141CC001B4E92 /* LoginCoordinator.swift */; };
+		84B7A7D323014369001B4E92 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7A7D223014369001B4E92 /* MainCoordinator.swift */; };
+		84B7A7D523015831001B4E92 /* RegistrationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7A7D423015831001B4E92 /* RegistrationCoordinator.swift */; };
+		84B7A7D723015869001B4E92 /* RecoveryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7A7D623015869001B4E92 /* RecoveryCoordinator.swift */; };
+		84B7A7D9230171F2001B4E92 /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B7A7D8230171F2001B4E92 /* MapCoordinator.swift */; };
 		AA1831D022C8D97400BA0CB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1831CF22C8D97400BA0CB8 /* AppDelegate.swift */; };
 		AA1831D722C8D97700BA0CB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA1831D622C8D97700BA0CB8 /* Assets.xcassets */; };
 		AA1831DA22C8D97700BA0CB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA1831D822C8D97700BA0CB8 /* LaunchScreen.storyboard */; };
@@ -31,10 +38,6 @@
 		AAB935AC22FF2F9200232822 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB935AB22FF2F9200232822 /* RegistrationViewController.swift */; };
 		AAB935B322FF347300232822 /* ViewControllerNavigationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB935B222FF347300232822 /* ViewControllerNavigationExtension.swift */; };
 		AAB935B522FF34C200232822 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB935B422FF34C200232822 /* BaseRouter.swift */; };
-		AAB935B722FF35B900232822 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB935B622FF35B900232822 /* LoginRouter.swift */; };
-		AAB935B922FF390C00232822 /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB935B822FF390C00232822 /* RegistrationRouter.swift */; };
-		AAB935BB22FF391800232822 /* RecoveryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB935BA22FF391800232822 /* RecoveryRouter.swift */; };
-		AAB935BD22FF392100232822 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB935BC22FF392100232822 /* MainRouter.swift */; };
 		AAB935BF22FF3CF100232822 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB935BE22FF3CF100232822 /* User.swift */; };
 		AAB935C122FF3DDD00232822 /* RealmUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB935C022FF3DDD00232822 /* RealmUserManager.swift */; };
 		AAB935C422FF41D200232822 /* AbstractUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB935C322FF41D200232822 /* AbstractUserManager.swift */; };
@@ -63,6 +66,13 @@
 		51876ADBD4B9FF0C1B7F8A4C /* Pods-Route TrackerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Route TrackerUITests.release.xcconfig"; path = "Target Support Files/Pods-Route TrackerUITests/Pods-Route TrackerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		55E4B18E236C6C3A8FEBCA68 /* Pods_Route_TrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Route_TrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78A8E4AFB42A87D358422DB9 /* Pods-Route TrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Route TrackerTests.debug.xcconfig"; path = "Target Support Files/Pods-Route TrackerTests/Pods-Route TrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		84B7A7CC23013F8F001B4E92 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		84B7A7CE23014034001B4E92 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		84B7A7D0230141CC001B4E92 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		84B7A7D223014369001B4E92 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		84B7A7D423015831001B4E92 /* RegistrationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationCoordinator.swift; sourceTree = "<group>"; };
+		84B7A7D623015869001B4E92 /* RecoveryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryCoordinator.swift; sourceTree = "<group>"; };
+		84B7A7D8230171F2001B4E92 /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
 		8527E731A7C02284CCC5E4EB /* Pods-Route Tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Route Tracker.debug.xcconfig"; path = "Target Support Files/Pods-Route Tracker/Pods-Route Tracker.debug.xcconfig"; sourceTree = "<group>"; };
 		AA1831CC22C8D97400BA0CB8 /* Route Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Route Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA1831CF22C8D97400BA0CB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,10 +101,6 @@
 		AAB935AB22FF2F9200232822 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		AAB935B222FF347300232822 /* ViewControllerNavigationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerNavigationExtension.swift; sourceTree = "<group>"; };
 		AAB935B422FF34C200232822 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
-		AAB935B622FF35B900232822 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
-		AAB935B822FF390C00232822 /* RegistrationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRouter.swift; sourceTree = "<group>"; };
-		AAB935BA22FF391800232822 /* RecoveryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryRouter.swift; sourceTree = "<group>"; };
-		AAB935BC22FF392100232822 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		AAB935BE22FF3CF100232822 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AAB935C022FF3DDD00232822 /* RealmUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUserManager.swift; sourceTree = "<group>"; };
 		AAB935C322FF41D200232822 /* AbstractUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractUserManager.swift; sourceTree = "<group>"; };
@@ -154,6 +160,14 @@
 				51876ADBD4B9FF0C1B7F8A4C /* Pods-Route TrackerUITests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		8420BF35230178970071F63A /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				84B7A7CE23014034001B4E92 /* ApplicationCoordinator.swift */,
+			);
+			path = Root;
 			sourceTree = "<group>";
 		};
 		AA1831C322C8D97400BA0CB8 = {
@@ -247,6 +261,7 @@
 		AA18320122C8DC4800BA0CB8 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				8420BF35230178970071F63A /* Root */,
 				AAB9359922FF273400232822 /* Login */,
 				AAB935A822FF2F6600232822 /* Registration */,
 				AAB9359E22FF2A1D00232822 /* Recovery */,
@@ -269,6 +284,7 @@
 				AA1885AA22E493DA003658F6 /* Coordinate.swift */,
 				AAB935B422FF34C200232822 /* BaseRouter.swift */,
 				AAB935BE22FF3CF100232822 /* User.swift */,
+				84B7A7CC23013F8F001B4E92 /* BaseCoordinator.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -288,6 +304,7 @@
 			children = (
 				AA18320622C8DE2C00BA0CB8 /* Map.storyboard */,
 				AA18320822C8DE5100BA0CB8 /* MapViewController.swift */,
+				84B7A7D8230171F2001B4E92 /* MapCoordinator.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -306,7 +323,7 @@
 			children = (
 				AAB9359A22FF275500232822 /* Login.storyboard */,
 				AAB9359C22FF282B00232822 /* LoginViewController.swift */,
-				AAB935B622FF35B900232822 /* LoginRouter.swift */,
+				84B7A7D0230141CC001B4E92 /* LoginCoordinator.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -316,7 +333,7 @@
 			children = (
 				AAB9359F22FF2A3100232822 /* Recovery.storyboard */,
 				AAB935A122FF2A9B00232822 /* RecoveryViewController.swift */,
-				AAB935BA22FF391800232822 /* RecoveryRouter.swift */,
+				84B7A7D623015869001B4E92 /* RecoveryCoordinator.swift */,
 			);
 			path = Recovery;
 			sourceTree = "<group>";
@@ -326,7 +343,7 @@
 			children = (
 				AAB935A422FF2BBB00232822 /* Main.storyboard */,
 				AAB935A622FF2BC600232822 /* MainViewController.swift */,
-				AAB935BC22FF392100232822 /* MainRouter.swift */,
+				84B7A7D223014369001B4E92 /* MainCoordinator.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -336,7 +353,7 @@
 			children = (
 				AAB935A922FF2F8100232822 /* Registration.storyboard */,
 				AAB935AB22FF2F9200232822 /* RegistrationViewController.swift */,
-				AAB935B822FF390C00232822 /* RegistrationRouter.swift */,
+				84B7A7D423015831001B4E92 /* RegistrationCoordinator.swift */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -613,25 +630,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAB9359D22FF282B00232822 /* LoginViewController.swift in Sources */,
-				AAB935BD22FF392100232822 /* MainRouter.swift in Sources */,
+				84B7A7D323014369001B4E92 /* MainCoordinator.swift in Sources */,
 				AA1831D022C8D97400BA0CB8 /* AppDelegate.swift in Sources */,
 				AAB935B322FF347300232822 /* ViewControllerNavigationExtension.swift in Sources */,
+				84B7A7CD23013F8F001B4E92 /* BaseCoordinator.swift in Sources */,
 				AA18320922C8DE5100BA0CB8 /* MapViewController.swift in Sources */,
 				AA1885AD22E4A4FD003658F6 /* LocalRouteFactory.swift in Sources */,
+				84B7A7D523015831001B4E92 /* RegistrationCoordinator.swift in Sources */,
 				AAB935C422FF41D200232822 /* AbstractUserManager.swift in Sources */,
-				AAB935B922FF390C00232822 /* RegistrationRouter.swift in Sources */,
 				AAB935BF22FF3CF100232822 /* User.swift in Sources */,
 				AAB935C122FF3DDD00232822 /* RealmUserManager.swift in Sources */,
 				AAB935AC22FF2F9200232822 /* RegistrationViewController.swift in Sources */,
 				AA18320C22C8E19400BA0CB8 /* GMSMapViewExtension.swift in Sources */,
 				AAB935B522FF34C200232822 /* BaseRouter.swift in Sources */,
 				AAB935C622FF424900232822 /* UserManagerFactory.swift in Sources */,
+				84B7A7D723015869001B4E92 /* RecoveryCoordinator.swift in Sources */,
 				AAB935A222FF2A9B00232822 /* RecoveryViewController.swift in Sources */,
 				AAB935A722FF2BC600232822 /* MainViewController.swift in Sources */,
+				84B7A7D1230141CC001B4E92 /* LoginCoordinator.swift in Sources */,
 				AA1885AB22E493DA003658F6 /* Coordinate.swift in Sources */,
-				AAB935BB22FF391800232822 /* RecoveryRouter.swift in Sources */,
-				AAB935B722FF35B900232822 /* LoginRouter.swift in Sources */,
 				AA1885A922E49253003658F6 /* RealmService.swift in Sources */,
+				84B7A7CF23014034001B4E92 /* ApplicationCoordinator.swift in Sources */,
+				84B7A7D9230171F2001B4E92 /* MapCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

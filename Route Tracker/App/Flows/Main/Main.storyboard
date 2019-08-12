@@ -41,11 +41,9 @@
                     <connections>
                         <outlet property="buttonLogout" destination="afg-ZG-fjV" id="bIa-ql-lGe"/>
                         <outlet property="buttonMap" destination="mMj-ch-Zoo" id="tQ6-bm-Nff"/>
-                        <outlet property="router" destination="RcV-qX-bxD" id="Z1Y-3m-Izq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iaj-94-eZX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="RcV-qX-bxD" customClass="MainRouter" customModule="Route_Tracker" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="23" y="113"/>
         </scene>

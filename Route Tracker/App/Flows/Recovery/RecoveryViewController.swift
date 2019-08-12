@@ -12,9 +12,11 @@ class RecoveryViewController: UIViewController {
 
 	@IBOutlet weak var textFieldLogin: UITextField!
 	@IBOutlet weak var buttonRecovery: UIButton!
-	@IBOutlet weak var router: RecoveryRouter!
 	
-	let userManager = UserManagerFactory().makeUserManager()
+	private let userManager = UserManagerFactory().makeUserManager()
+	
+	internal var onLogin: (() -> Void)?
+	
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +44,7 @@ class RecoveryViewController: UIViewController {
 	private func show(password: String) {
 		let alert = UIAlertController(title: "Пароль", message: password, preferredStyle: .alert)
 		let ok = UIAlertAction(title: "OK", style: .cancel, handler: { [weak self] _ in
-			self?.router.showLogin()
+			self?.onLogin?()
 		})
 		alert.addAction(ok)
 		present(alert, animated: true)

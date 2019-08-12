@@ -39,12 +39,10 @@
                     </view>
                     <connections>
                         <outlet property="buttonRecovery" destination="saV-gK-UTH" id="QHj-sq-RPk"/>
-                        <outlet property="router" destination="CmR-u5-GnV" id="qwG-kT-A4D"/>
                         <outlet property="textFieldLogin" destination="5IM-mB-9yL" id="CJv-T2-Z4k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x91-kC-B9B" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="CmR-u5-GnV" customClass="RecoveryRouter" customModule="Route_Tracker" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="288" y="11"/>
         </scene>

@@ -12,6 +12,7 @@ import GoogleMaps
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+	var coordinator: ApplicationCoordinator?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -25,19 +26,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 	
 	private func showStartController() {
-		let controller: UIViewController
-		if UserDefaults.standard.bool(forKey: "isLogin") {
-			controller = UIStoryboard(name: "Main", bundle: nil)
-				.instantiateViewController(MainViewController.self)
-		} else {
-			controller = UIStoryboard(name: "Login", bundle: nil)
-				.instantiateViewController(LoginViewController.self)
-		}
+//		let controller: UIViewController
+//		if UserDefaults.standard.bool(forKey: "isLogin") {
+//			controller = UIStoryboard(name: "Main", bundle: nil)
+//				.instantiateViewController(MainViewController.self)
+//		} else {
+//			controller = UIStoryboard(name: "Login", bundle: nil)
+//				.instantiateViewController(LoginViewController.self)
+//		}
 		window = UIWindow()
-		
-		window?.rootViewController = UINavigationController(rootViewController: controller)
-		
 		window?.makeKeyAndVisible()
+		coordinator = ApplicationCoordinator()
+		coordinator?.start()
 
 	}
 

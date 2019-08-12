@@ -64,13 +64,11 @@
                         <outlet property="buttonLogin" destination="Xas-FT-qf5" id="xsb-Z3-CGB"/>
                         <outlet property="buttonRecovery" destination="xQi-Fq-Wfa" id="Uca-gn-DNE"/>
                         <outlet property="buttonRegistration" destination="zvD-ao-Fi9" id="VIr-zk-W7w"/>
-                        <outlet property="router" destination="zN7-Lz-p9n" id="UCB-z6-ntf"/>
                         <outlet property="textFieldLogin" destination="ESy-QU-4ur" id="Kb0-YE-1m2"/>
                         <outlet property="textFieldPass" destination="aPq-pp-GEl" id="4e5-VA-q4b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J5t-bT-DMj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="zN7-Lz-p9n" customClass="LoginRouter" customModule="Route_Tracker" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="-175" y="64"/>
         </scene>
