@@ -34,20 +34,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 				.instantiateViewController(LoginViewController.self)
 		}
 		window = UIWindow()
-		
 		window?.rootViewController = UINavigationController(rootViewController: controller)
-		
 		window?.makeKeyAndVisible()
 
 	}
 
-    func applicationWillResignActive(_ application: UIApplication) { }
+    func applicationWillResignActive(_ application: UIApplication) {
+		///Добавить blurEffect
+		window?.rootViewController?.view.alpha = 0
+	}
 
     func applicationDidEnterBackground(_ application: UIApplication) { }
 
     func applicationWillEnterForeground(_ application: UIApplication) { }
 
-    func applicationDidBecomeActive(_ application: UIApplication) { }
+    func applicationDidBecomeActive(_ application: UIApplication) {
+		///Убрать blurEffect
+		window?.rootViewController?.view.alpha = 1
+	}
 
     func applicationWillTerminate(_ application: UIApplication) { }
 	
