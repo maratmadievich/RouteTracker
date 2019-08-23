@@ -12,7 +12,7 @@ final class MainRouter: BaseRouter {
 	func showMap() {
 		let controller = UIStoryboard(name: "Map", bundle: nil)
 			.instantiateViewController(MapViewController.self)
-		setAsRoot(UINavigationController(rootViewController: controller))
+		show(controller)
 	}
 	
 	func logout() {

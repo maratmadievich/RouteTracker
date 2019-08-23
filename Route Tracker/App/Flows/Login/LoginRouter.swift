@@ -18,12 +18,12 @@ final class LoginRouter: BaseRouter {
 	func showRegistration() {
 		let controller = UIStoryboard(name: "Registration", bundle: nil)
 			.instantiateViewController(RegistrationViewController.self)
-		setAsRoot(UINavigationController(rootViewController: controller))
+		show(controller)
 	}
 	
 	func showRecovery() {
 		let controller = UIStoryboard(name: "Recovery", bundle: nil)
 			.instantiateViewController(RecoveryViewController.self)
-		setAsRoot(UINavigationController(rootViewController: controller))
+		show(controller)
 	}
 }

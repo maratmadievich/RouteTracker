@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Registration View Controller-->
+        <!--Controller-->
         <scene sceneID="bwV-cm-hIA">
             <objects>
                 <viewController storyboardIdentifier="RegistrationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ves-wj-56V" customClass="RegistrationViewController" customModule="Route_Tracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -52,7 +52,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nGd-yS-XPI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="1Tp-XV-Z88" customClass="RegistrationRouter" customModule="Route_Tracker" customModuleProvider="target"/>
+                <customObject id="1Tp-XV-Z88" customClass="RegistrationRouter" customModule="Route_Tracker" customModuleProvider="target">
+                    <connections>
+                        <outlet property="controller" destination="Ves-wj-56V" id="cgl-zf-0Dm"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="-175" y="64"/>
         </scene>
