@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Recovery View Controller-->
+        <!--Controller-->
         <scene sceneID="HRu-Nw-QkQ">
             <objects>
                 <viewController storyboardIdentifier="RecoveryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Iyo-yW-wju" customClass="RecoveryViewController" customModule="Route_Tracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -44,7 +44,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x91-kC-B9B" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="CmR-u5-GnV" customClass="RecoveryRouter" customModule="Route_Tracker" customModuleProvider="target"/>
+                <customObject id="CmR-u5-GnV" customClass="RecoveryRouter" customModule="Route_Tracker" customModuleProvider="target">
+                    <connections>
+                        <outlet property="controller" destination="Iyo-yW-wju" id="q1G-4w-lVc"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="288" y="11"/>
         </scene>

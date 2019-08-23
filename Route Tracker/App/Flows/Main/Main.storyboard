@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Controller-->
         <scene sceneID="snH-sJ-kgK">
             <objects>
                 <viewController storyboardIdentifier="MainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ks8-Jt-UFe" customClass="MainViewController" customModule="Route_Tracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -45,7 +45,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iaj-94-eZX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="RcV-qX-bxD" customClass="MainRouter" customModule="Route_Tracker" customModuleProvider="target"/>
+                <customObject id="RcV-qX-bxD" customClass="MainRouter" customModule="Route_Tracker" customModuleProvider="target">
+                    <connections>
+                        <outlet property="controller" destination="ks8-Jt-UFe" id="uN9-bg-0NY"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="23" y="113"/>
         </scene>

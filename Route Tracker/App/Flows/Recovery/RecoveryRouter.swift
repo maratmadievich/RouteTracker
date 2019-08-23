@@ -10,9 +10,7 @@ import UIKit
 final class RecoveryRouter: BaseRouter {
 	
 	func showLogin() {
-		let controller = UIStoryboard(name: "Login", bundle: nil)
-			.instantiateViewController(LoginViewController.self)
-		setAsRoot(UINavigationController(rootViewController: controller))
+		_ = controller.navigationController?.popViewController(animated: true)
 	}
 	
 }
