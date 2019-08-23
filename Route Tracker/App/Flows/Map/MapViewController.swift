@@ -31,6 +31,8 @@ class MapViewController: UIViewController {
     /// Для хранения объекта маршрута и объекта, представляющего его путь
     private var route: GMSPolyline?
     private var routePath: GMSMutablePath?
+	private var marker: GMSMarker?
+	internal var avatarObservable: BehaviorSubject<UIImage?>?
     
     private var isTrackingWork = false
     
@@ -38,6 +40,7 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         configureMap()
         configureButtons()
+		setSubscribe()
 		configureLocationManager()
     }
     
@@ -64,6 +67,12 @@ class MapViewController: UIViewController {
         buttonLastRoute.layer.masksToBounds = true
     }
 	
+	private func setSubscribe() {
+		avatarObservable?.subscribe(onNext: { [weak self] image in
+			self?.marker?.iconView = self?.configureMarkerIconView(with: image)
+		}).dispose()
+	}
+	
 	private func configureLocationManager() {
 		locationManager
 			.location
@@ -82,6 +91,9 @@ class MapViewController: UIViewController {
 		routePath.add(location.coordinate)
 		route.path = routePath
 		let position = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: mapZoom)
+		
+		marker?.position = location.coordinate
+		marker?.map = mapView
 		mapView.animate(to: position)
 	}
     
@@ -110,9 +122,13 @@ extension MapViewController {
     private func traking(isStart: Bool) {
         isTrackingWork = isStart
         trackUserLocation(needTrackStart: isStart)
-        isStart
-            ? configureRoute()
-            : LocalRouteFactory().savePath(from: routePath)
+		if isStart {
+			configureRoute()
+			configureMarker()
+		} else {
+			LocalRouteFactory().savePath(from: routePath)
+			deleteMarker()
+		}
     }
     
     
@@ -130,7 +146,37 @@ extension MapViewController {
         route?.path = routePath
         route?.strokeColor = .white
         route?.strokeWidth = 3
+		
+		marker?.map = nil
     }
+	
+	private func configureMarker() {
+		marker = GMSMarker()
+		do {
+			marker?.iconView = configureMarkerIconView(with: try avatarObservable?.value())
+		}
+		catch {
+			print("Нет иконки")
+		}
+		marker?.map = nil
+		marker?.title = "Вы здесь"
+	}
+	
+	private func configureMarkerIconView(with image: UIImage?) -> UIImageView {
+		let markerView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+		markerView.image = image
+		markerView.tintColor = .white
+		markerView.layer.cornerRadius = 20
+		markerView.layer.borderColor = UIColor.white.cgColor
+		markerView.layer.borderWidth = 1
+		markerView.clipsToBounds = true
+		return markerView
+	}
+	
+	private func deleteMarker() {
+		marker?.map = nil
+		marker = nil
+	}
     
     private func trackUserLocation(needTrackStart: Bool) {
         needTrackStart

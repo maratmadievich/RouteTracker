@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class MainRouter: BaseRouter {
 	
-	func showMap() {
+	func showMap(observable: BehaviorSubject<UIImage?>) {
 		let controller = UIStoryboard(name: "Map", bundle: nil)
 			.instantiateViewController(MapViewController.self)
+		controller.avatarObservable = observable
 		show(controller)
 	}
 	
@@ -19,6 +22,13 @@ final class MainRouter: BaseRouter {
 		let controller = UIStoryboard(name: "Login", bundle: nil)
 			.instantiateViewController(LoginViewController.self)
 		setAsRoot(UINavigationController(rootViewController: controller))
+	}
+	
+	func showSelfie(image: UIImage) {
+		let controller = UIStoryboard(name: "Selfie", bundle: nil)
+			.instantiateViewController(SelfieViewController.self)
+		controller.image = image
+		show(controller)
 	}
 	
 }

@@ -21,6 +21,9 @@
 		AA1885A922E49253003658F6 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1885A822E49253003658F6 /* RealmService.swift */; };
 		AA1885AB22E493DA003658F6 /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1885AA22E493DA003658F6 /* Coordinate.swift */; };
 		AA1885AD22E4A4FD003658F6 /* LocalRouteFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1885AC22E4A4FD003658F6 /* LocalRouteFactory.swift */; };
+		AA248031230FD75E004BA974 /* Selfie.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA248030230FD75E004BA974 /* Selfie.storyboard */; };
+		AA248033230FD773004BA974 /* SelfieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA248032230FD773004BA974 /* SelfieViewController.swift */; };
+		AA248035230FDEE1004BA974 /* ImageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA248034230FDEE1004BA974 /* ImageStorage.swift */; };
 		AAB9359B22FF275500232822 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAB9359A22FF275500232822 /* Login.storyboard */; };
 		AAB9359D22FF282B00232822 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB9359C22FF282B00232822 /* LoginViewController.swift */; };
 		AAB935A022FF2A3100232822 /* Recovery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAB9359F22FF2A3100232822 /* Recovery.storyboard */; };
@@ -82,6 +85,9 @@
 		AA1885A822E49253003658F6 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		AA1885AA22E493DA003658F6 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		AA1885AC22E4A4FD003658F6 /* LocalRouteFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRouteFactory.swift; sourceTree = "<group>"; };
+		AA248030230FD75E004BA974 /* Selfie.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Selfie.storyboard; sourceTree = "<group>"; };
+		AA248032230FD773004BA974 /* SelfieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieViewController.swift; sourceTree = "<group>"; };
+		AA248034230FDEE1004BA974 /* ImageStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStorage.swift; sourceTree = "<group>"; };
 		AAB9359A22FF275500232822 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		AAB9359C22FF282B00232822 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AAB9359F22FF2A3100232822 /* Recovery.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recovery.storyboard; sourceTree = "<group>"; };
@@ -253,6 +259,7 @@
 				AAB935A822FF2F6600232822 /* Registration */,
 				AAB9359E22FF2A1D00232822 /* Recovery */,
 				AAB935A322FF2BA500232822 /* Main */,
+				AA24802F230FD740004BA974 /* Selfie */,
 				AA18320522C8DE1900BA0CB8 /* Map */,
 			);
 			path = Flows;
@@ -271,6 +278,7 @@
 				AA1885AA22E493DA003658F6 /* Coordinate.swift */,
 				AAB935B422FF34C200232822 /* BaseRouter.swift */,
 				AAB935BE22FF3CF100232822 /* User.swift */,
+				AA248034230FDEE1004BA974 /* ImageStorage.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -302,6 +310,15 @@
 				AAB935B222FF347300232822 /* ViewControllerNavigationExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AA24802F230FD740004BA974 /* Selfie */ = {
+			isa = PBXGroup;
+			children = (
+				AA248030230FD75E004BA974 /* Selfie.storyboard */,
+				AA248032230FD773004BA974 /* SelfieViewController.swift */,
+			);
+			path = Selfie;
 			sourceTree = "<group>";
 		};
 		AAB9359922FF273400232822 /* Login */ = {
@@ -475,6 +492,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA248031230FD75E004BA974 /* Selfie.storyboard in Resources */,
 				AAB9359B22FF275500232822 /* Login.storyboard in Resources */,
 				AA1831DA22C8D97700BA0CB8 /* LaunchScreen.storyboard in Resources */,
 				AAB935A022FF2A3100232822 /* Recovery.storyboard in Resources */,
@@ -633,6 +651,7 @@
 				AAB935BD22FF392100232822 /* MainRouter.swift in Sources */,
 				AA1831D022C8D97400BA0CB8 /* AppDelegate.swift in Sources */,
 				AAB935B322FF347300232822 /* ViewControllerNavigationExtension.swift in Sources */,
+				AA248035230FDEE1004BA974 /* ImageStorage.swift in Sources */,
 				AA18320922C8DE5100BA0CB8 /* MapViewController.swift in Sources */,
 				AA1885AD22E4A4FD003658F6 /* LocalRouteFactory.swift in Sources */,
 				AAB935C422FF41D200232822 /* AbstractUserManager.swift in Sources */,
@@ -645,6 +664,7 @@
 				AAB935C622FF424900232822 /* UserManagerFactory.swift in Sources */,
 				AAB935A222FF2A9B00232822 /* RecoveryViewController.swift in Sources */,
 				AAB935A722FF2BC600232822 /* MainViewController.swift in Sources */,
+				AA248033230FD773004BA974 /* SelfieViewController.swift in Sources */,
 				AA1885AB22E493DA003658F6 /* Coordinate.swift in Sources */,
 				AAB935C922FFFB0700232822 /* LocationManager.swift in Sources */,
 				AAB935BB22FF391800232822 /* RecoveryRouter.swift in Sources */,

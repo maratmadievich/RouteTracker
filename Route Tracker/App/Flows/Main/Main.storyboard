@@ -34,6 +34,14 @@
                                     <action selector="buttonLogoutTapped:" destination="ks8-Jt-UFe" eventType="touchUpInside" id="RdA-si-0AQ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NvS-hz-P7K">
+                                <rect key="frame" x="200" y="322" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Селфач"/>
+                                <connections>
+                                    <action selector="buttonSelfieTapped:" destination="ks8-Jt-UFe" eventType="touchUpInside" id="lvr-go-6Xc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="mGB-Zl-cHA"/>
@@ -41,6 +49,7 @@
                     <connections>
                         <outlet property="buttonLogout" destination="afg-ZG-fjV" id="bIa-ql-lGe"/>
                         <outlet property="buttonMap" destination="mMj-ch-Zoo" id="tQ6-bm-Nff"/>
+                        <outlet property="buttonSelfie" destination="NvS-hz-P7K" id="OlI-zB-b2a"/>
                         <outlet property="router" destination="RcV-qX-bxD" id="Z1Y-3m-Izq"/>
                     </connections>
                 </viewController>
